@@ -1,0 +1,42 @@
+{
+  "name": "kitegtm",
+  "version": "1.0.0",
+  "description": "Ask about your KiteGTM missions, buyer fits, conversations and qualified opportunities, and act on them from Codex and ChatGPT.",
+  "author": {
+    "name": "KiteGTM",
+    "email": "support@kitegtm.com",
+    "url": "https://kitegtm.com"
+  },
+  "homepage": "https://kitegtm.com/integrations/ai",
+  "repository": "https://github.com/inkris-apps/kitegtm-plugin",
+  "license": "MIT",
+  "keywords": ["sales", "outbound", "prospecting", "opportunities", "email", "linkedin", "crm", "gtm"],
+  "mcpServers": "./.mcp.json",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "KiteGTM",
+    "shortDescription": "Outbound that finds buyers",
+    "longDescription": "KiteGTM finds the companies and decision-makers that match what you sell, works them over email and LinkedIn, and hands you qualified opportunities. This plugin lets you ask about that work and act on it: see which missions need attention, read and answer conversations, review buyer fits and opportunities, pause or resume a mission, and record what came of an opportunity. Replies are sent only with the exact text you approve. Billing and payments stay in KiteGTM.",
+    "developerName": "KiteGTM",
+    "category": "Business & Operations",
+    "capabilities": [
+      "Read missions, buyer fits, conversations and opportunities",
+      "Reply to a conversation with the text you approve",
+      "Pause, resume or stop a mission or a person",
+      "Record an opportunity's outcome"
+    ],
+    "websiteURL": "https://kitegtm.com",
+    "supportURL": "https://kitegtm.com/support",
+    "privacyPolicyURL": "https://kitegtm.com/privacy",
+    "termsOfServiceURL": "https://kitegtm.com/terms",
+    "defaultPrompt": [
+      "Which of my KiteGTM missions need attention?",
+      "Show me this week's qualified opportunities",
+      "Who replied today, and which replies need me?"
+    ],
+    "brandColor": "#2F80ED",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.png",
+    "screenshots": []
+  }
+}

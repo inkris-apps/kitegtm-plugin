@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "kitegtm": {
+      "type": "http",
+      "url": "https://api.kitegtm.com/mcp",
+      "oauth_resource": "https://api.kitegtm.com/mcp"
+    }
+  }
+}

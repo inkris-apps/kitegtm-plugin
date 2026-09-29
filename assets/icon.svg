@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="30 24 280 280">
+  <defs>
+    <linearGradient id="kite-blue" x1="115" y1="150" x2="278" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2F80ED"/>
+      <stop offset="1" stop-color="#4A90E2"/>
+    </linearGradient>
+    <linearGradient id="kite-tail" x1="54" y1="284" x2="170" y2="196" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2D7FEF"/>
+      <stop offset="1" stop-color="#4A90E2"/>
+    </linearGradient>
+    <linearGradient id="kite-sky" x1="175" y1="215" x2="250" y2="145" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A9C8F7"/>
+      <stop offset="1" stop-color="#C3D8FA"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Blue leading plane -->
+  <path d="M121 118 L278 48 L184 171 L171 191 L171 143 Z" fill="url(#kite-blue)"/>
+
+  <!-- Dark right facet -->
+  <path d="M278 48 L261 177 L224 129 Z" fill="#0D1117"/>
+
+  <!-- Pale lower facet -->
+  <path d="M224 129 L261 177 L167 222 L184 171 Z" fill="url(#kite-sky)"/>
+
+  <!-- Substantial tapered trajectory: broad at the kite, narrowing toward the lower-left tip -->
+  <path d="M170 196
+           C151 233 110 269 54 284
+           C111 274 146 248 164 218
+           C167 211 169 202 170 196 Z"
+        fill="url(#kite-tail)"/>
+</svg>

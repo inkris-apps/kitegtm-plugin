@@ -1,0 +1,15 @@
+{
+  "name": "kitegtm",
+  "description": "KiteGTM for Claude Code and Codex: your missions, conversations and qualified opportunities.",
+  "owner": {
+    "name": "KiteGTM",
+    "email": "support@kitegtm.com"
+  },
+  "plugins": [
+    {
+      "name": "kitegtm",
+      "source": "./",
+      "description": "Your KiteGTM missions, conversations and qualified opportunities, in Claude."
+    }
+  ]
+}
