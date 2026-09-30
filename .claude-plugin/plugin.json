@@ -9,7 +9,10 @@
     "url": "https://kitegtm.com"
   },
   "homepage": "https://kitegtm.com/integrations/ai",
+  "documentationUrl": "https://kitegtm.com/integrations/ai",
+  "supportUrl": "https://kitegtm.com/support",
   "privacyPolicyUrl": "https://kitegtm.com/privacy",
+  "termsOfServiceUrl": "https://kitegtm.com/terms",
   "repository": "https://github.com/inkris-apps/kitegtm-plugin",
   "license": "MIT",
   "keywords": ["sales", "outbound", "prospecting", "opportunities", "email", "linkedin", "crm", "gtm"]
