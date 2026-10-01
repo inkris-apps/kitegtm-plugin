@@ -1,12 +1,12 @@
 ---
 name: kitegtm
-description: Work with a KiteGTM workspace through the KiteGTM connector. Use when the user asks about their outbound pipeline in KiteGTM, such as missions, buyer fits, replies and conversations, qualified opportunities, results or credits, or wants to reply to someone, pause or resume a mission, stop pursuing a person, or record an opportunity's outcome.
+description: Work with a KiteGTM workspace through the KiteGTM connector. Use when the user asks about their outbound pipeline in KiteGTM, such as missions, buyer fits, replies and conversations, qualified opportunities, results or credits, campaigns, contacts and imports, or wants to draft a reply, pause or resume a mission or campaign, stop pursuing a person, import contacts, add people to a campaign, or record an opportunity's outcome.
 ---
 
 # KiteGTM
 
 KiteGTM finds the companies and decision-makers that match what a business sells, works them over
-email and LinkedIn, and hands over qualified opportunities.
+email, LinkedIn and SMS, and hands over qualified opportunities.
 
 ## The words mean specific things
 
@@ -31,16 +31,23 @@ email and LinkedIn, and hands over qualified opportunities.
 
 Every action works as the signed-in person.
 
-- **Replying.** Read the thread with `get_conversation` first. Write the reply, show the person the
-  exact text, and call `reply_to_conversation` only after they approve it. A sent message cannot be
-  recalled.
+- **Replying.** Read the thread with `get_conversation` first, then write the reply.
+  `reply_to_conversation` saves it as a draft and sends nothing: tell the person it is waiting for
+  them in KiteGTM, with the `review_url` it returns, where they review it and press Send.
 - **Stopping someone** (`stop_person`) ends their pursuit on every channel. Confirm the person and
   the reason first. `pause_person` is the reversible choice.
 - **Missions.** `pause_mission` stops the search for new companies; `resume_mission` starts it again.
 - **Outcomes.** `mark_opportunity` records the user's own judgement that someone qualifies;
   `record_opportunity_outcome` records accepted, won, lost or withdrawn.
+- **Campaigns and contacts.** The campaign list and get tools give `campaign_id`; `list_contacts` gives
+  the contact keys. Adding people to a running campaign (`add_contacts_to_campaign`, or
+  `start_contact_import` with a campaign destination) means it contacts the eligible ones on its
+  schedule: show the person the campaign and the selection, use `dry_run` first, and get their
+  go-ahead. A queued import or add has only started; check `get_contact_import` or `get_contact_job`
+  before saying it finished. `remove_contacts_from_campaign` is reversible and is not do-not-contact.
 
 ## Not available here
 
 Buying credits, changing a plan, payment methods and subscriptions stay in the KiteGTM app, under
-Settings. `get_credit_balance` can show the balance.
+Settings. `get_credit_balance` can show the balance. Creating, editing, starting and deleting
+campaigns also stay in the app.
