@@ -1,22 +1,29 @@
 ---
 name: kitegtm
-description: Work with a KiteGTM workspace through the KiteGTM connector. Use when the user asks about their outbound pipeline in KiteGTM, such as missions, buyer fits, replies and conversations, qualified opportunities, results or credits, campaigns, contacts and imports, or wants to draft a reply, pause or resume a mission or campaign, stop pursuing a person, import contacts, add people to a campaign, or record an opportunity's outcome.
+description: Work with a KiteGTM workspace through the KiteGTM connector. Use when the user asks about their Kite missions, buyer fits, replies and conversations, opportunities and Introductions, results or credits, campaigns, contacts and imports, or wants to draft a reply, pause or resume a mission or campaign, stop pursuing a person, import contacts, add people to a campaign, or record an opportunity's outcome.
 ---
 
 # KiteGTM
 
-KiteGTM finds the companies and decision-makers that match what a business sells, works them over
-email, LinkedIn and SMS, and hands over qualified opportunities.
+Kite is an introductions platform. Tell Kite what you want to achieve. Kite identifies the right
+people and gets you introduced.
 
 ## The words mean specific things
 
-- A **mission** sets the objective: the market, the decision-makers and what a qualified opportunity
-  looks like. Its id is `market_id`.
-- A **buyer fit** is a decision-maker KiteGTM pursues. It is a verified match to the target, not a
-  sign of buying interest.
-- An **opportunity** is a qualified outcome: an appropriate decision-maker confirmed interest and met
-  the customer's conditions. **Developing** interest is still being confirmed and is not an
-  opportunity. Never report developing interest, a reply or a meeting as an opportunity on its own.
+- An **objective** is what the business wants to achieve. A **mission** is how Kite pursues it: the
+  people to reach, what an Introduction must show, and the work. Its id is `market_id`.
+- A **buyer fit** is a person Kite pursues. It is a verified match, not a sign of interest.
+- An **Introduction** is a person who wants to talk and meets every condition the customer requires,
+  on recorded evidence. It comes with the person, company, context, conversation, qualification and
+  next step. A meeting is optional.
+- The tools call these records **opportunities**. Each `list_opportunities` row says whether it is an
+  Introduction now (`introduction.state`). Developing interest, a qualified stage with a condition still
+  unknown, a reply, a referral or a booking alone is not an Introduction: never report one as an
+  Introduction. `mark_opportunity` and `record_opportunity_outcome` do not make anyone an Introduction.
+- **Monthly Reach** is the number of unique people Kite can source into missions each billing period.
+  It is not sends or people contacted, and unused Reach does not carry over. Introductions have no fee,
+  cap or guaranteed number.
+- A figure a tool did not return is unknown, not zero.
 
 ## Answering questions
 
@@ -25,7 +32,9 @@ email, LinkedIn and SMS, and hands over qualified opportunities.
   `list_missions` gives `market_id`, `list_mission_companies` gives `record_id`,
   `list_conversations` and `list_opportunities` give `conv_key`.
 - A daily check: `get_recent_activity`, then `list_conversations` with `tab: "needs_you"`, then
-  `list_opportunities` with `stage: "qualified"`.
+  `list_opportunities` with `introduction: "introduction"` for new Introductions.
+- `get_results` counts Introductions separately from qualified and developing opportunities. Its people
+  contacted counts sends, not Monthly Reach.
 
 ## Acting
 
@@ -38,7 +47,8 @@ Every action works as the signed-in person.
   the reason first. `pause_person` is the reversible choice.
 - **Missions.** `pause_mission` stops the search for new companies; `resume_mission` starts it again.
 - **Outcomes.** `mark_opportunity` records the user's own judgement that someone qualifies;
-  `record_opportunity_outcome` records accepted, won, lost or withdrawn.
+  `record_opportunity_outcome` records accepted, won, lost or withdrawn. Neither is evidence of an
+  Introduction.
 - **Campaigns and contacts.** The campaign list and get tools give `campaign_id`; `list_contacts` gives
   the contact keys. Adding people to a running campaign (`add_contacts_to_campaign`, or
   `start_contact_import` with a campaign destination) means it contacts the eligible ones on its
@@ -48,6 +58,6 @@ Every action works as the signed-in person.
 
 ## Not available here
 
-Buying credits, changing a plan, payment methods and subscriptions stay in the KiteGTM app, under
-Settings. `get_credit_balance` can show the balance. Creating, editing, starting and deleting
-campaigns also stay in the app.
+Buying credits, changing a plan or Monthly Reach, payment methods and subscriptions stay in the
+KiteGTM app, under Settings. `get_credit_balance` can show the balance. Creating, editing, starting and
+deleting campaigns also stay in the app.
