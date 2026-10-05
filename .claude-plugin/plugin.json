@@ -1,8 +1,8 @@
 {
   "name": "kitegtm",
   "displayName": "KiteGTM",
-  "version": "1.2.0",
-  "description": "Ask about your Kite missions, buyer fits, conversations, campaigns, opportunities and Introductions across email, LinkedIn and SMS, and act on them: draft replies you send from KiteGTM, pause or resume a mission or campaign, stop or pause pursuing someone, import contacts and add them to campaigns, and record an opportunity's outcome.",
+  "version": "1.2.2",
+  "description": "Ask about your Kite missions, buyer fits, conversations, campaigns, opportunities and Introductions across email, LinkedIn and SMS, and act on them: draft replies you send from KiteGTM, pause or resume a mission, pause a campaign, stop or pause pursuing someone, import contacts into your contact book, preview campaign additions you complete in KiteGTM, and record an opportunity's outcome.",
   "author": {
     "name": "KiteGTM",
     "email": "support@kitegtm.com",

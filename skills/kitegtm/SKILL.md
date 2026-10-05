@@ -1,6 +1,6 @@
 ---
 name: kitegtm
-description: Work with a KiteGTM workspace through the KiteGTM connector. Use when the user asks about their Kite missions, buyer fits, replies and conversations, opportunities and Introductions, results or credits, campaigns, contacts and imports, or wants to draft a reply, pause or resume a mission or campaign, stop pursuing a person, import contacts, add people to a campaign, or record an opportunity's outcome.
+description: Work with a KiteGTM workspace through the KiteGTM connector. Use when the user asks about their Kite missions, buyer fits, replies and conversations, opportunities and Introductions, results or credits, campaigns, contacts and imports, or wants to draft a reply, pause or resume a mission, pause a campaign, stop pursuing a person, import contacts, preview campaign additions, or record an opportunity's outcome.
 ---
 
 # KiteGTM
@@ -50,14 +50,16 @@ Every action works as the signed-in person.
   `record_opportunity_outcome` records accepted, won, lost or withdrawn. Neither is evidence of an
   Introduction.
 - **Campaigns and contacts.** The campaign list and get tools give `campaign_id`; `list_contacts` gives
-  the contact keys. Adding people to a running campaign (`add_contacts_to_campaign`, or
-  `start_contact_import` with a campaign destination) means it contacts the eligible ones on its
-  schedule: show the person the campaign and the selection, use `dry_run` first, and get their
-  go-ahead. A queued import or add has only started; check `get_contact_import` or `get_contact_job`
-  before saying it finished. `remove_contacts_from_campaign` is reversible and is not do-not-contact.
+  the contact keys. `start_contact_import` imports a staged file into the contact book, which sends
+  nothing. `add_contacts_to_campaign` with `dry_run: true` previews who is eligible. An AI app cannot
+  enroll people into a campaign: a campaign import or an actual add returns `needs_person` with a
+  review link, and nothing is queued. Tell the person to review the list and complete enrollment in
+  KiteGTM, with that link. A queued import or removal has only started; check `get_contact_import` or
+  `get_contact_job` before saying it finished. `remove_contacts_from_campaign` is reversible and is not
+  do-not-contact.
 
 ## Not available here
 
 Buying credits, changing a plan or Monthly Reach, payment methods and subscriptions stay in the
-KiteGTM app, under Settings. `get_credit_balance` can show the balance. Creating, editing, starting and
-deleting campaigns also stay in the app.
+KiteGTM app, under Settings. `get_credit_balance` can show the balance. Creating, editing, starting,
+resuming and deleting campaigns, and enrolling people into them, also stay in the app.
