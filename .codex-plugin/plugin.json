@@ -1,6 +1,6 @@
 {
   "name": "kitegtm",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "Ask about your Kite missions, buyer fits, conversations, campaigns, opportunities and Introductions across email, LinkedIn and SMS, and act on them from Codex and ChatGPT.",
   "author": {
     "name": "KiteGTM",
@@ -25,14 +25,14 @@
   "interface": {
     "displayName": "KiteGTM",
     "shortDescription": "Meet the right people",
-    "longDescription": "Kite is an introductions platform. Tell Kite what you want to achieve. Kite identifies the right people and gets you introduced. This plugin lets you ask about that work and act on it: see which missions need attention, read conversations and draft replies, review buyer fits, opportunities and which of them are Introductions, check campaigns, import contacts and add them to campaigns, pause or resume a mission or campaign, and record what came of an opportunity. Replies are saved as drafts that you send from KiteGTM. Billing, plans and Monthly Reach stay in KiteGTM.",
+    "longDescription": "Kite is an introductions platform. Tell Kite what you want to achieve. Kite identifies the right people and gets you introduced. This plugin lets you ask about that work and act on it: see which missions need attention, read conversations and draft replies, review buyer fits, opportunities and which of them are Introductions, check campaigns, import contacts into your contact book and preview campaign additions you complete in KiteGTM, pause or resume a mission, pause a campaign, and record what came of an opportunity. Replies are saved as drafts that you send from KiteGTM. Billing, plans and Monthly Reach stay in KiteGTM.",
     "developerName": "KiteGTM",
     "category": "Business & Operations",
     "capabilities": [
       "Read missions, buyer fits, conversations, campaigns, opportunities and Introductions",
       "Draft a reply that you send from KiteGTM",
-      "Pause, resume or stop a mission, a campaign or a person",
-      "Import contacts and add them to a campaign",
+      "Pause or resume a mission or a person, pause a campaign, or stop pursuing someone",
+      "Import contacts and preview campaign additions you complete in KiteGTM",
       "Record an opportunity's outcome"
     ],
     "websiteURL": "https://kitegtm.com",
