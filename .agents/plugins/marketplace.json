@@ -1,6 +1,6 @@
 {
   "name": "kitegtm",
-  "description": "KiteGTM for Claude Code and Codex: your Kite missions, conversations, opportunities and Introductions.",
+  "description": "KiteGTM for Codex: your Kite missions, people, recommendations, conversations and Introductions.",
   "owner": {
     "name": "KiteGTM",
     "email": "support@kitegtm.com"
@@ -9,7 +9,7 @@
     {
       "name": "kitegtm",
       "source": "./",
-      "description": "Your Kite missions, conversations, opportunities and Introductions, in Claude."
+      "description": "Your Kite missions, people, recommendations, conversations and Introductions, in Codex."
     }
   ]
 }
