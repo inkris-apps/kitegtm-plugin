@@ -117,11 +117,13 @@ repository's `main` branch through its marketplace files, so a push to `main` (`
 
 - The tools themselves live in the backend (`ops-service/app/gateway_mcp.py`); this repository only describes and
   connects to them. Keep this README, `SKILL.md` and both manifests in step with what the live connector does.
-- **Releasing:** raise `version` in both `plugin.json` files together whenever anything installed changes (the
-  manifests, `.mcp.json`, the skill or the assets). Installed copies are kept by version, so a change without a new
-  version may not reach people who already have the plugin. Run `claude plugin validate .` before pushing.
+- **Releasing:** installed copies are kept by version, so every change to what is installed (the manifests,
+  `.mcp.json`, the skill or the assets) needs a new `version` in both `plugin.json` files. `wt ship` writes it (Kite
+  versioning: the plugin keeps its own number until the Kite version passes 1.2.2, then takes the Kite number); never
+  edit it by hand, and the pre-commit hook refuses a task that does. Run `claude plugin validate .` and
+  `claude plugin validate .claude-plugin/plugin.json` before landing.
 - Work happens on `claude/<slug>` or `codex/<slug>` branches cut from `landed` and lands through `wt`, like the
-  other KiteGTM code repositories. There is no CI, no changelog and no release tag yet; versions are recorded only in
-  commit messages (1.0.0, 1.1.0, 1.2.0, 1.2.2).
-- Still to update in the plugin itself: `SKILL.md` and both manifests use the earlier Introduction wording and do not
-  mention finding a person or mission recommendations. Changing them needs a new version.
+  other KiteGTM code repositories. There is no CI. Versions so far are recorded only in git history (the manifests'
+  `version` and some commit messages): 1.0.0, 1.1.0, 1.2.0, 1.2.2; the tag `kite-v1.0.0` marks the Kite 1.0.0 baseline.
+- Still to update in the plugin itself: `SKILL.md` uses the earlier Introduction definition, and neither `SKILL.md` nor
+  the manifests mention finding a person or mission recommendations. Changing them needs a new version.
