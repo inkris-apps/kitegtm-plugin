@@ -34,8 +34,10 @@ skill `.agents/skills/kite-work` (repository `kitegtm-workspace`).
 4. **Push after every commit** and keep the card current. Run this repository's checks where the session can.
 5. **Done:** set `State: ready` and mark the pull request ready for review. The owner's Mac lands it with the full gate
    and it appears on the owner's local stack; a problem comes back as a comment on the pull request.
-6. **No git checkout (ChatGPT Work):** use the GitHub connector. Create the branch from `landed`, commit the files with
-   the connector, and open the pull request as above. The Mac runs the checks when it lands the work.
+6. **No git checkout, or git can't reach GitHub (ChatGPT Work; Codex Cloud, whose sandbox can't fetch or push):** use
+   the GitHub connector. Read files from `landed` with it (a Codex Cloud checkout may be older), create the branch from
+   `landed`, commit the files with the connector, and open the pull request as above. The Mac runs the checks when it
+   lands the work.
 
 Never push to `landed` or `main` (GitHub refuses it: both require wt's gate status) and never ship: shipping is the
 owner's call. Use only test keys; no production secret belongs in a cloud environment. Locally, work goes through wt
