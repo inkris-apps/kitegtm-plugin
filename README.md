@@ -1,6 +1,6 @@
 # KiteGTM for Claude, ChatGPT and Codex
 
-Kite is an introductions platform. Tell Kite what you want to achieve. Kite identifies the right people and gets you introduced.
+Kite is an introductions platform. It gets you into phone or video meetings with qualified people who have a reason to do business with you.
 
 **Who it helps:** Businesses that want to meet the right people to achieve a business goal.
 
@@ -102,7 +102,7 @@ add a custom connector with the address above.
 
 ## For maintainers
 
-Current version: **1.2.2**. The repository is the plugin: Claude Code and Codex install it from this
+The current version is recorded in both plugin manifests below. The repository is the plugin: Claude Code and Codex install it from this
 repository's `main` branch through its marketplace files, so a push to `main` (`wt ship`) publishes it.
 
 | File | Purpose |
@@ -119,11 +119,13 @@ repository's `main` branch through its marketplace files, so a push to `main` (`
   connects to them. Keep this README, `SKILL.md` and both manifests in step with what the live connector does.
 - **Releasing:** installed copies are kept by version, so every change to what is installed (the manifests,
   `.mcp.json`, the skill or the assets) needs a new `version` in both `plugin.json` files. `wt ship` writes it (Kite
-  versioning: the plugin keeps its own number until the Kite version passes 1.2.2, then takes the Kite number); never
+  versioning: the plugin keeps its own number until the Kite version passes it, then takes the Kite number); never
   edit it by hand, and the pre-commit hook refuses a task that does. Run `claude plugin validate .` and
   `claude plugin validate .claude-plugin/plugin.json` before landing.
 - Work happens on `claude/<slug>` or `codex/<slug>` branches cut from `landed` and lands through `wt`, like the
-  other KiteGTM code repositories. There is no CI. Versions so far are recorded only in git history (the manifests'
-  `version` and some commit messages): 1.0.0, 1.1.0, 1.2.0, 1.2.2; the tag `kite-v1.0.0` marks the Kite 1.0.0 baseline.
-- Still to update in the plugin itself: `SKILL.md` uses the earlier Introduction definition, and neither `SKILL.md` nor
-  the manifests mention finding a person or mission recommendations. Changing them needs a new version.
+  other KiteGTM code repositories. There is no CI. Git history and release tags record earlier versions;
+  the tag `kite-v1.0.0` marks the Kite 1.0.0 baseline.
+- Before releasing, verify the installed plugin's skill and connector tool list together. Available tools depend on
+  the connected account and scopes; a source declaration alone does not prove a client exposes it. In a test workspace,
+  check finding a person and all five recommendation tools, including preparation's review link and no-start boundary.
+  Verify Introduction reporting keeps conditions to confirm separate from conditions known not to be met.

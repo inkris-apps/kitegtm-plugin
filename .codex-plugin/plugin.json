@@ -1,7 +1,7 @@
 {
   "name": "kitegtm",
   "version": "1.3.12",
-  "description": "Ask about your Kite missions, buyer fits, conversations, campaigns, opportunities and Introductions across email, LinkedIn and SMS, and act on them from Codex and ChatGPT.",
+  "description": "Work with your Kite missions, people, conversations, campaigns and Introductions from Codex and ChatGPT. Find a person, review mission recommendations and prepare one to start in KiteGTM, check results and credits, draft replies, manage pursuit and contacts, and record outcomes.",
   "author": {
     "name": "KiteGTM",
     "email": "support@kitegtm.com",
@@ -25,14 +25,17 @@
   "interface": {
     "displayName": "KiteGTM",
     "shortDescription": "Meet the right people",
-    "longDescription": "Kite is an introductions platform. Tell Kite what you want to achieve. Kite identifies the right people and gets you introduced. This plugin lets you ask about that work and act on it: see which missions need attention, read conversations and draft replies, review buyer fits, opportunities and which of them are Introductions, check campaigns, import contacts into your contact book and preview campaign additions you complete in KiteGTM, pause or resume a mission, pause a campaign, and record what came of an opportunity. Replies are saved as drafts that you send from KiteGTM. Billing, plans and Monthly Reach stay in KiteGTM.",
+    "longDescription": "Kite is an introductions platform. It gets you into phone or video meetings with qualified people who have a reason to do business with you. Use this plugin to review missions, buyer fits, conversations and Introductions, including conditions to confirm on the call; find people by name, email or company; review, refresh, prepare or dismiss mission recommendations; check results, activity, credits and email, LinkedIn and SMS campaigns; draft replies; pause or resume missions or people; stop pursuit or pause campaigns; import contacts into your contact book, preview campaign additions or remove contacts from a campaign; and record opportunity outcomes. An Introduction means the person has agreed to talk and nothing on record rules them out. Recommendations are strategies, not confirmed interest. Preparing one starts nothing: you review and press Start in KiteGTM. You also send reply drafts and complete campaign enrollment there. Billing, plans and Monthly Reach stay in KiteGTM.",
     "developerName": "KiteGTM",
     "category": "Business & Operations",
     "capabilities": [
       "Read missions, buyer fits, conversations, campaigns, opportunities and Introductions",
+      "Find people in your workspace by name, email or company",
+      "Review, refresh, prepare or dismiss mission recommendations; start prepared missions in KiteGTM",
+      "Check results, recent activity and credit balance",
       "Draft a reply that you send from KiteGTM",
       "Pause or resume a mission or a person, pause a campaign, or stop pursuing someone",
-      "Import contacts and preview campaign additions you complete in KiteGTM",
+      "Import contacts into your contact book, preview campaign additions you complete in KiteGTM, and remove campaign contacts",
       "Record an opportunity's outcome"
     ],
     "websiteURL": "https://kitegtm.com",
