@@ -7,6 +7,12 @@ base (workspace `AGENTS.md`, "Start here"). Tool names and descriptions must mat
 
 ## Cloud sessions (Claude cloud, Codex Cloud, ChatGPT Work)
 
+For any code task, before `wt land` or handing it off to land, the working agent starts a fresh reviewer in its own
+tool (Claude: subagent or `/code-review`; Codex: review command or new thread), given only the diff and one-line goal.
+Ask: would this break something; does it risk money, sending, sign-in or data; is it covered by a test; does it do what
+the task asked? No style comments or cross-tool review. Fix real findings and record only on the task card with
+`wt card --review "passed · N found, N fixed"` (or `"open: <issue>"`). No GitHub PR reviews or PR comments.
+
 The same task flow as on the Mac, delivered as a pull request. The playbook for planning and status is the workspace
 skill `.agents/skills/kite-work` (repository `kitegtm-workspace`).
 
