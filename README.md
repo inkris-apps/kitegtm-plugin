@@ -46,8 +46,23 @@ KiteGTM under Settings, AI apps.
   request to review the list and complete enrollment in the signed-in KiteGTM app, where consent,
   suppression and duplicate checks apply.
 - **Not here:** buying credits, changing your plan or Monthly Reach, payment methods and your
-  subscription stay in KiteGTM. So do creating, editing, starting, resuming and deleting campaigns,
-  and enrolling people into them.
+  subscription stay in KiteGTM, and no purchase or upgrade link is shown in your AI app. So do
+  creating, editing, starting, resuming and deleting campaigns, and enrolling people into them.
+
+### Versioned permissions
+
+Versioned permissions for AI app connections: available when your workspace has it turned on. Until
+then, and for every connection made before, everything above stays exactly as it is.
+
+- **You choose what a connection may do** when you press Allow, and the connection stays in the
+  workspace you allowed it for. To give an existing connection these choices, connect it again from
+  your AI app.
+- **Actions you confirm in KiteGTM.** Sending a reply, starting or resuming a mission, resuming a
+  person, recording an outcome and adding contacts to a campaign are prepared by the app and happen
+  only after you confirm that exact action in KiteGTM, signed in to that workspace. Starting a mission
+  uses Monthly Reach as people are sourced into it.
+- **Longer work.** The app can hand Kite a task. Kite keeps it even if the chat closes.
+- Disconnecting stops future access; it does not erase what the app already received.
 
 ## Where people come from, and opt-outs
 
