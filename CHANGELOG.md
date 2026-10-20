@@ -2,6 +2,12 @@
 
 This repository's changes in each Kite release, newest first. `wt ship` writes this file; do not edit it by hand.
 
+## Kite 1.12.3 (2026-10-20)
+
+### Fixes
+
+- If Kite briefly can't check an AI app connection (for example during a database outage), the app's request is refused and can be retried, so a removed connection never keeps access. (conversation-hosts)
+
 ## Kite 1.3.21 (2026-10-18)
 
 ### Internal
