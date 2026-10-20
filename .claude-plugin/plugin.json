@@ -2,7 +2,7 @@
   "name": "kitegtm",
   "displayName": "KiteGTM",
   "version": "1.3.21",
-  "description": "Ask about your Kite missions, buyer fits, conversations, campaigns, opportunities and Introductions across email, LinkedIn and SMS. An Introduction means the person has agreed to talk and nothing on record rules them out; unknown required conditions travel with it to confirm on the call. Find people by name, email or company; review, refresh, prepare or dismiss mission recommendations; check results, activity and credits; draft replies; pause or resume missions or people; stop pursuit or pause campaigns; import contacts, preview additions or remove campaign contacts; and record outcomes. You send drafts, start prepared missions and complete campaign enrollment in KiteGTM.",
+  "description": "Ask about your Kite missions, buyer fits, conversations, campaigns, opportunities and Introductions across email, LinkedIn and SMS. An Introduction means the person has agreed to talk and nothing on record rules them out; unknown required conditions travel with it to confirm on the call. Find people by name, email or company; review, refresh, prepare or dismiss mission recommendations; check results, activity and credits; draft replies; pause or resume missions or people; stop pursuit or pause campaigns; import contacts, preview additions or remove campaign contacts; and record outcomes. You send drafts, start prepared missions and complete campaign enrollment in KiteGTM. Versioned permissions, available when your workspace has it turned on: you choose what each connection may do, and a reply, mission start or campaign enrollment it prepares happens only after you confirm it in KiteGTM.",
   "author": {
     "name": "KiteGTM",
     "email": "support@kitegtm.com",

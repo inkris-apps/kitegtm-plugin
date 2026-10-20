@@ -1,7 +1,7 @@
 {
   "name": "kitegtm",
   "version": "1.3.21",
-  "description": "Work with your Kite missions, people, conversations, campaigns and Introductions from Codex and ChatGPT. Find a person, review mission recommendations and prepare one to start in KiteGTM, check results and credits, draft replies, manage pursuit and contacts, and record outcomes.",
+  "description": "Work with your Kite missions, people, conversations, campaigns and Introductions from Codex and ChatGPT. Find a person, review mission recommendations and prepare one to start in KiteGTM, check results and credits, draft replies, manage pursuit and contacts, and record outcomes. Versioned permissions, available when your workspace has it turned on: prepare actions you confirm in KiteGTM and hand Kite longer tasks.",
   "author": {
     "name": "KiteGTM",
     "email": "support@kitegtm.com",
@@ -25,7 +25,7 @@
   "interface": {
     "displayName": "KiteGTM",
     "shortDescription": "Meet the right people",
-    "longDescription": "Kite is an introductions platform. It gets you into phone or video meetings with qualified people who have a reason to do business with you. Use this plugin to review missions, buyer fits, conversations and Introductions, including conditions to confirm on the call; find people by name, email or company; review, refresh, prepare or dismiss mission recommendations; check results, activity, credits and email, LinkedIn and SMS campaigns; draft replies; pause or resume missions or people; stop pursuit or pause campaigns; import contacts into your contact book, preview campaign additions or remove contacts from a campaign; and record opportunity outcomes. An Introduction means the person has agreed to talk and nothing on record rules them out. Recommendations are strategies, not confirmed interest. Preparing one starts nothing: you review and press Start in KiteGTM. You also send reply drafts and complete campaign enrollment there. Billing, plans and Monthly Reach stay in KiteGTM.",
+    "longDescription": "Kite is an introductions platform. It gets you into phone or video meetings with qualified people who have a reason to do business with you. Use this plugin to review missions, buyer fits, conversations and Introductions, including conditions to confirm on the call; find people by name, email or company; review, refresh, prepare or dismiss mission recommendations; check results, activity, credits and email, LinkedIn and SMS campaigns; draft replies; pause or resume missions or people; stop pursuit or pause campaigns; import contacts into your contact book, preview campaign additions or remove contacts from a campaign; and record opportunity outcomes. An Introduction means the person has agreed to talk and nothing on record rules them out. Recommendations are strategies, not confirmed interest. Preparing one starts nothing: you review and press Start in KiteGTM. You also send reply drafts and complete campaign enrollment there. Billing, plans and Monthly Reach stay in KiteGTM. Versioned permissions, available when your workspace has it turned on: you choose what the connection may do when you allow it; it can prepare a reply, a mission start or a campaign enrollment that happens only after you confirm it in KiteGTM, and hand Kite longer tasks that continue after the chat closes. No purchase or upgrade happens here.",
     "developerName": "KiteGTM",
     "category": "Business & Operations",
     "capabilities": [
@@ -36,7 +36,8 @@
       "Draft a reply that you send from KiteGTM",
       "Pause or resume a mission or a person, pause a campaign, or stop pursuing someone",
       "Import contacts into your contact book, preview campaign additions you complete in KiteGTM, and remove campaign contacts",
-      "Record an opportunity's outcome"
+      "Record an opportunity's outcome",
+      "Versioned permissions, available when your workspace has it turned on: prepare a reply, mission start or campaign enrollment you confirm in KiteGTM, and hand Kite longer tasks"
     ],
     "websiteURL": "https://kitegtm.com",
     "supportURL": "https://kitegtm.com/support",

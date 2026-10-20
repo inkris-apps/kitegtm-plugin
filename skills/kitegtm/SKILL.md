@@ -1,6 +1,6 @@
 ---
 name: kitegtm
-description: Work with a KiteGTM workspace through the KiteGTM connector. Use when the user asks about their Kite missions, mission recommendations or what to pursue next, buyer fits, replies and conversations, opportunities and Introductions, results or credits, campaigns, contacts and imports, or wants to find a person by name, email or company, review or prepare a recommended mission, draft a reply, pause or resume a mission, pause a campaign, stop pursuing a person, import contacts, preview campaign additions, or record an opportunity's outcome.
+description: Work with a KiteGTM workspace through the KiteGTM connector. Use when the user asks about their Kite missions, mission recommendations or what to pursue next, buyer fits, replies and conversations, opportunities and Introductions, results or credits, campaigns, contacts and imports, or wants to find a person by name, email or company, review or prepare a recommended mission, draft a reply, pause or resume a mission, pause a campaign, stop pursuing a person, import contacts, preview campaign additions, record an opportunity's outcome, or, with versioned permissions (available when your workspace has it turned on), prepare an action for them to confirm in KiteGTM or hand Kite a longer task.
 ---
 
 # KiteGTM
@@ -68,11 +68,14 @@ who have a reason to do business with you.
 
 ## Acting
 
-Every action works as the signed-in person.
+Every action works as the signed-in person, within what the connection is allowed to do.
 
-- If the connected tool advertises sending a reply or enrolling campaign contacts directly, do not
-  invoke it as a draft or preview. Prepare the content here and direct the user to review it in KiteGTM.
-  The draft and review workflows below require the matching tool contract on the current connection.
+- Use each tool for what its own description says it does. `reply_to_conversation` only saves a draft
+  and `add_contacts_to_campaign` only previews or hands enrollment to the person; never present either
+  as a send or an enrollment. Do not invoke any other tool that would send a reply or enroll contacts
+  directly unless it is one of the `propose_` tools described under **Versioned permissions** below.
+  Otherwise prepare the content here and direct the user to review it in KiteGTM. The draft and review
+  workflows below require the matching tool contract on the current connection.
 - **Replying.** Read the thread with `get_conversation` first, then write the reply.
   `reply_to_conversation` saves it as a draft and sends nothing: tell the person it is waiting for
   them in KiteGTM, with the `review_url` it returns, where they review it and press Send.
@@ -91,8 +94,41 @@ Every action works as the signed-in person.
   `get_contact_job` before saying it finished. `remove_contacts_from_campaign` is reversible and is not
   do-not-contact.
 
+## Versioned permissions
+
+Versioned permissions: available when your workspace has it turned on. Check the tools the current
+connection lists: a connection without `get_connection` uses the original permissions, and everything
+above applies unchanged.
+
+- **What this connection may do.** `get_connection` names the workspace the connection is bound to, the
+  permissions the person gave it when connecting, and whether they are turned on now. Work only in that
+  workspace. A tool outside those permissions is not listed; one that is refused says why and what to
+  do instead. To allow more, the person connects the app again; disconnecting is in KiteGTM under
+  Settings, AI apps.
+- **Actions the person confirms.** `propose_reply_send`, `propose_mission_start` and
+  `propose_campaign_enrollment` prepare one exact action and return `proposal_id` and `confirm_url`.
+  Nothing happens until the person opens `confirm_url` and confirms it in KiteGTM, signed in to that
+  workspace. Show them exactly what will happen, give them the link, and report the action as sent,
+  started or enrolled only when `get_action_status` says `done`. `cancel_action` withdraws one that is
+  still waiting; `list_pending_decisions` lists what is waiting. Never pass `confirmed`, approval or
+  token arguments and never ask the person to paste a code: they are ignored and confirm nothing.
+  On such a connection some original tools (`resume_person`, `resume_mission`, `mark_opportunity`,
+  `record_opportunity_outcome`, `start_contact_import`) also return `needs_confirmation` with
+  `confirm_url` instead of making the change: handle them the same way. A status of `staged` or
+  `accepted` is not done.
+- **Starting a mission** uses Monthly Reach as people are sourced into it. Say so; do not quote a
+  number the tools did not return.
+- **Longer work.** `start_task` saves a task for Kite in the workspace and returns `task_id`, even if
+  this chat closes. `task_status` reads its progress, receipts and any decision waiting for the person
+  from any later chat; `cancel_task` stops steps that have not started. `lookup_evidence` shows what
+  actually happened for a task or a prepared action. Report only what these return.
+- **Memory.** `correct_memory` corrects one thing Kite remembers, by its id. If it answers that it is
+  not available, say so.
+
 ## Not available here
 
 Buying credits, changing a plan or Monthly Reach, payment methods and subscriptions stay in the
-KiteGTM app, under Settings. `get_credit_balance` can show the balance. Creating, editing, starting,
-resuming and deleting campaigns, and enrolling people into them, also stay in the app.
+KiteGTM app, under Settings. `get_credit_balance` can show the balance. Do not offer or look for a
+purchase, upgrade or checkout link: none is provided here. Creating, editing, starting, resuming and
+deleting campaigns also stay in the app. Enrolling people into a campaign and starting a mission happen
+in the app too; a versioned connection can only prepare them for the person to confirm there.
